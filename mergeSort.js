@@ -14,21 +14,17 @@ function mergeSort(array) {
 }
 
 function merge(left, right) {
-    const result = [];
+  const result = [];
 
-    while (left.length && right.length) {
-        if (left[0] == right[0]) {
-            //remove duplicate
-            result.push(left.shift());
-            right.shift();
-        } else if (left[0] < right[0]) {
-            result.push(left.shift());
-        } else {
-            result.push(right.shift());
-        }
+  while (left.length && right.length) {
+    if (left[0] <= right[0]) {
+      result.push(left.shift());
+    } else {
+      result.push(right.shift());
     }
+  }
 
-    return result.concat(left, right);
+  return result.concat(left, right);
 }
 
 export default mergeSort;
